@@ -14,6 +14,7 @@ import SearchProduct from '../pages/SearchProduct'
 import SignUp from '../pages/SignUp'
 import UserDetail from '../pages/UserDetail'
 import UserOrder from '../pages/UserOrder'
+import  Devloppage from "../components/DevelopPage"
 
 const router = createBrowserRouter([
     {
@@ -80,7 +81,10 @@ const router = createBrowserRouter([
                 path : "user-detail",
                 element : <UserDetail/>,
                 
-            },
+            },{
+                path:"devloppage",
+                element:<Devloppage/>
+            }
         ]
     }
 ])

@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import {Link} from "react-router-dom"
 
 
 const Footer = () => {
@@ -15,18 +16,18 @@ const Footer = () => {
 
         {/* Social Media Icons */}
         <div className="flex space-x-6">
-          <a href="https://github.com/DurgeshKumar143" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
+          <Link href="https://github.com/DurgeshKumar143" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
             <FaGithub className="text-2xl" />
-          </a>
-          <a href="www.linkedin.com/in/durgesh-kumar-b8385b234" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
+          </Link>
+          <Link href="www.linkedin.com/in/durgesh-kumar-b8385b234" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
             <FaLinkedin className="text-2xl" />
-          </a>
-          <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
+          </Link>
+          <Link href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
             <FaTwitter className="text-2xl" />
-          </a>
-          <a href="https://instagram.com/mithileshsingh_143" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
+          </Link>
+          <Link href="https://instagram.com/mithileshsingh_143" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
             <FaInstagram className="text-2xl" />
-          </a>
+          </Link>
         </div>
       </div>
 
