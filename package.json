@@ -8,7 +8,7 @@
     "@mui/base": "^5.0.0-beta.58",
     "@mui/icons-material": "^5.16.7",
     "@mui/joy": "^5.0.0-beta.36",
-    "@mui/material": "^6.1.1",
+    "@mui/material": "^5.13.5",
     "@mui/styled-engine": "^5.15.14",
     "@mui/system": "^6.1.1",
     "@reduxjs/toolkit": "^2.2.1",
@@ -27,7 +27,10 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^10.0.4",
     "web-vitals": "^2.1.4"
+     
   },
+   
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
