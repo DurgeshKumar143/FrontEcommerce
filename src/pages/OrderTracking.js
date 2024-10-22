@@ -57,6 +57,7 @@ const OrderTracking = ({onClose,orderId,image,price,quantity,billingAddress,paym
                 src={image || "https://i.imgur.com/bOcHdBa.jpg"}
                 width="160 "
                 height="160"
+                alt="Image"
               />
               </div>
               

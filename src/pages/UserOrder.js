@@ -168,7 +168,7 @@ const UserOrder = () => {
                     >
                       <div className="w-32 h-32 bg-slate-200">
                         <img
-                          alt=""
+                          alt={product?.id}
                           src={product?.orderItems[0].productImage}
                           className="w-full h-full object-scale-down mix-blend-multiply"
                         />

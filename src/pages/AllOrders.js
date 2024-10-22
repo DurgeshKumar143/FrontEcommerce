@@ -221,7 +221,7 @@ const AllOrders = () => {
                   {el?.customer ? (
                     <img
                       src={el?.customer?.image}
-                      alt="no"
+                      alt={el?.name}
                       className="fluid w-10 h-10 rounded-full border-0"
                     />
                   ) : (

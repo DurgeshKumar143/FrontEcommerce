@@ -53,7 +53,6 @@ const ProductDetails = () => {
 
   }
 
-  console.log("data",data)
 
   useEffect(()=>{
     fetchProductDetails()
@@ -102,7 +101,7 @@ const ProductDetails = () => {
           <div className='h-96 flex flex-col lg:flex-row-reverse gap-4'>
 
               <div className='h-[300px] w-[300px] lg:h-96 lg:w-96 bg-slate-200 relative p-2'>
-                  <img src={activeImage} className='h-full w-full object-scale-down mix-blend-multiply' onMouseMove={handleZoomImage} onMouseLeave={handleLeaveImageZoom}/>
+                  <img src={activeImage} alt="Active" className='h-full w-full object-scale-down mix-blend-multiply' onMouseMove={handleZoomImage} onMouseLeave={handleLeaveImageZoom}/>
 
                     {/**product zoom */}
                     {
@@ -145,7 +144,7 @@ const ProductDetails = () => {
                           data?.productImage?.map((imgURL,index) =>{
                             return(
                               <div className='h-20 w-20 bg-slate-200 rounded p-1' key={imgURL}>
-                                <img src={imgURL} className='w-full h-full object-scale-down mix-blend-multiply cursor-pointer' onMouseEnter={()=>handleMouseEnterProduct(imgURL)}  onClick={()=>handleMouseEnterProduct(imgURL)}/>
+                                <img src={imgURL} alt={imgURL?.name} className='w-full h-full object-scale-down mix-blend-multiply cursor-pointer' onMouseEnter={()=>handleMouseEnterProduct(imgURL)}  onClick={()=>handleMouseEnterProduct(imgURL)}/>
                               </div>
                             )
                           })

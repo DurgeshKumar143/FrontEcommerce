@@ -165,7 +165,7 @@ const AdminEditProduct = ({
                                <div className='relative group'>
                                    <img 
                                      src={el} 
-                                     alt={el} 
+                                     alt={el?.alt} 
                                      width={80} 
                                      height={80}  
                                      className='bg-slate-100 border cursor-pointer'  

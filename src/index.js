@@ -7,7 +7,6 @@ import reportWebVitals from './reportWebVitals';
 import router from './routes';
 import { store } from './store/store';
 
-console.log("Store is : ",store.getState());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
