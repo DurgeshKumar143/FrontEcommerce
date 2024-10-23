@@ -33,10 +33,7 @@ const CategroyWiseProductDisplay = ({category, heading}) => {
 
     useEffect(()=>{
         fetchData()
-    },[])
-
-
-
+    },[fetchData])
 
   return (
     <div className='container mx-auto px-4 my-6 relative'>
