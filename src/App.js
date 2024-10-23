@@ -53,7 +53,7 @@ function App() {
     /**user Details cart product */
     fetchUserAddToCart()
 
-  },fetchUserDetails())
+  },[fetchUserDetails])
   return (
     <>
       <Context.Provider value={{

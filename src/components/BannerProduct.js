@@ -40,15 +40,11 @@ const BannerProduct = () => {
             setCurrentImage(preve => preve + 1)
         }
     }
-
-    
     const preveImage = () =>{
         if(currentImage !==0){
             setCurrentImage(preve => preve - 1)
         }
     }
-
-
     useEffect(()=>{
         const interval = setInterval(()=>{
             if(desktopImages.length - 1 > currentImage){
@@ -59,7 +55,7 @@ const BannerProduct = () => {
         },5000)
 
         return ()=> clearInterval(interval)
-    },[currentImage])
+    },[])
 
   return (
     <div className='container mx-auto px-4 rounded '>
