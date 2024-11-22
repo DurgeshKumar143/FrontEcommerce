@@ -30,8 +30,8 @@ const ChangeUserRole = ({ Role, onClose, userID,callFun }) => {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        pstatus :  Object.keys(Role).length == 3 ? status :"", 
-        ostatus :  Object.keys(Role).length == 4 ? status :"", 
+        pstatus :  Object.keys(Role).length === 3 ? status :"", 
+        ostatus :  Object.keys(Role).length ===4 ? status :"", 
         id : userID,
       }),
     });

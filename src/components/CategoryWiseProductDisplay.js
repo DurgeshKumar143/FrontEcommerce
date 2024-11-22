@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import fetchCategoryWiseProduct from '../helpers/fetchCategoryWiseProduct'
 import displayINRCurrency from '../helpers/displayCurrency'
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import addToCart from '../helpers/addToCart'
 import Context from '../context'
@@ -18,25 +17,15 @@ const CategroyWiseProductDisplay = ({category, heading}) => {
        await addToCart(e,id)
        fetchUserAddToCart()
     }
-
-
-
-
     const fetchData = async() =>{
         setLoading(true)
         const categoryProduct = await fetchCategoryWiseProduct(category)
         setLoading(false)
-
-    
         setData(categoryProduct?.data)
     }
-
     useEffect(()=>{
         fetchData()
-    },[])
-
-
-
+    },[fetchData])
 
   return (
     <div className='container mx-auto px-4 my-6 relative'>

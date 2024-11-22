@@ -62,10 +62,8 @@ const AdminEditProduct = ({
         ...preve,
         productImage : [...newProductImage]
       }
-    })
-    
+    }) 
   }
-
 
   {/**upload product */}
   const handleSubmit = async(e) =>{
