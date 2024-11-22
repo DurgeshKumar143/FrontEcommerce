@@ -20,8 +20,7 @@ function App() {
         credentials : 'include'
       })
 
-      
-
+    
       const dataApi = await dataResponse.json()
 
       
@@ -31,9 +30,7 @@ function App() {
       }
   }
 
- 
 
-  
 
   const fetchUserAddToCart = async()=>{
     const dataResponse = await fetch(SummaryApi.addToCartProductCount.url,{
@@ -53,7 +50,7 @@ function App() {
     /**user Details cart product */
     fetchUserAddToCart()
 
-  },[fetchUserDetails])
+  },[])
   return (
     <>
       <Context.Provider value={{
