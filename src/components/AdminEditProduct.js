@@ -62,7 +62,7 @@ const AdminEditProduct = ({
         ...preve,
         productImage : [...newProductImage]
       }
-    }) 
+    })
   }
 
   {/**upload product */}

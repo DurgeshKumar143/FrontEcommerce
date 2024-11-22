@@ -21,11 +21,12 @@ const CategroyWiseProductDisplay = ({category, heading}) => {
         setLoading(true)
         const categoryProduct = await fetchCategoryWiseProduct(category)
         setLoading(false)
+    
         setData(categoryProduct?.data)
     }
     useEffect(()=>{
         fetchData()
-    },[fetchData])
+    },[])
 
   return (
     <div className='container mx-auto px-4 my-6 relative'>

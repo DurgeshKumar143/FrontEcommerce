@@ -32,7 +32,7 @@ const PaymentDetail = ({ onClose, data, setData,handleOnChange ,handleSubmit}) =
 
   useEffect(() => {
     userData();
-  }, [userData]);
+  }, []);
 
   return (
     <>

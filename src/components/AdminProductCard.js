@@ -20,7 +20,6 @@ const AdminProductCard = ({ data, fetchdata }) => {
     })
     
      
-
     const responseData = await response.json()
 
     if(responseData.success){
@@ -28,7 +27,6 @@ const AdminProductCard = ({ data, fetchdata }) => {
         
         fetchdata()
     }
-
 
     if(responseData.error){
       toast.error(responseData?.message)

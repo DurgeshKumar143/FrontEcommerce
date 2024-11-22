@@ -27,10 +27,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^10.0.4",
     "web-vitals": "^2.1.4"
-     
   },
-   
-  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -56,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "tailwindcss": "^3.4.1"
   }
 }

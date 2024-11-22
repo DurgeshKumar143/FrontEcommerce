@@ -32,7 +32,7 @@ const VerticalCardProduct = ({category, heading}) => {
 
     useEffect(()=>{
         fetchData()
-    },[fetchData])
+    },[])
 
     const scrollRight = () =>{
         scrollElement.current.scrollLeft += 300
