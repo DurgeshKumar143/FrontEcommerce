@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -11,62 +11,68 @@ import Context from './context';
 import { setUserDetails } from './store/userSlice';
 
 function App() {
-  const dispatch = useDispatch()
-  const [cartProductCount,setCartProductCount] = useState(0)
+  const dispatch = useDispatch();
+  const [cartProductCount, setCartProductCount] = useState(0);
 
-  const fetchUserDetails = async()=>{
-      const dataResponse = await fetch(SummaryApi.current_user.url,{
-        method : SummaryApi.current_user.method,
-        credentials : 'include'
-      })
+  /**
+   * Fetch user details and update the Redux store
+   */
+  const fetchUserDetails = useCallback(async () => {
+    try {
+      const response = await fetch(SummaryApi.current_user.url, {
+        method: SummaryApi.current_user.method,
+        credentials: 'include',
+      });
 
-    
-      const dataApi = await dataResponse.json()
+      const dataApi = await response.json();
 
-      
-
-      if(dataApi.success){
-        dispatch(setUserDetails(dataApi.data))
+      if (dataApi.success) {
+        dispatch(setUserDetails(dataApi.data));
       }
-  }
+    } catch (error) {
+      console.error("Failed to fetch user details:", error);
+    }
+  }, [dispatch]);
 
+  /**
+   * Fetch the count of products added to the cart
+   */
+  const fetchUserAddToCart = useCallback(async () => {
+    try {
+      const response = await fetch(SummaryApi.addToCartProductCount.url, {
+        method: SummaryApi.addToCartProductCount.method,
+        credentials: 'include',
+      });
 
+      const dataApi = await response.json();
 
-  const fetchUserAddToCart = async()=>{
-    const dataResponse = await fetch(SummaryApi.addToCartProductCount.url,{
-      method : SummaryApi.addToCartProductCount.method,
-      credentials : 'include'
-    })
+      setCartProductCount(dataApi?.data?.count || 0);
+    } catch (error) {
+      console.error("Failed to fetch cart product count:", error);
+    }
+  }, []);
 
+  // Fetch data when the component mounts
+  useEffect(() => {
+    fetchUserDetails();
+    fetchUserAddToCart();
+  }, [fetchUserDetails, fetchUserAddToCart]);
 
-    const dataApi = await dataResponse.json()
-
-    setCartProductCount(dataApi?.data?.count)
-  }
-
-  useEffect(()=>{
-    /**user Details */
-    fetchUserDetails()
-    /**user Details cart product */
-    fetchUserAddToCart()
-
-  },[])
   return (
     <>
-      <Context.Provider value={{
-          fetchUserDetails, // user detail fetch 
-          cartProductCount, // current user add to cart product count,
-          fetchUserAddToCart
-      }}>
-        <ToastContainer 
-          position='top-center'
-        />
-        
-        <Header/>
-        <main className='min-h-[calc(100vh-120px)] pt-16'>
-          <Outlet/>
+      <Context.Provider
+        value={{
+          fetchUserDetails, // User detail fetch
+          cartProductCount, // Current user add-to-cart product count
+          fetchUserAddToCart, // Function to fetch add-to-cart count
+        }}
+      >
+        <ToastContainer position="top-center" />
+        <Header />
+        <main className="min-h-[calc(100vh-120px)] pt-16">
+          <Outlet />
         </main>
-        <Footer/>
+        <Footer />
       </Context.Provider>
     </>
   );
