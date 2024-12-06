@@ -22,10 +22,7 @@ const Login = () => {
   const { fetchUserDetails, fetchUserAddToCart } = useContext(Context);
 
   const generalContext = useContext(Context);
-  console.log(
-    "This is general context section",
-    generalContext.fetchUserDetails()
-  );
+
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -51,18 +48,18 @@ const Login = () => {
     });
 
     const dataApi = await dataResponse.json();
-    console.log("user data is : ", dataApi);
+     
     dispatch(setUserDetails(dataApi.data));
 
-    console.log("This is  data response section", dataResponse);
+    
 
     // const dataApi = await dataResponse.json()
 
     if (dataApi.success) {
       toast.success(dataApi.message);
-      console.log("Hello this is before redirect form ");
+       
       navigate("/");
-      console.log("This is  after redirect section");
+       
       fetchUserDetails();
       fetchUserAddToCart();
     }
