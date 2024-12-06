@@ -11,7 +11,7 @@ import { setUserDetails } from "../store/userSlice";
 const Login = () => {
   const dispatch = useDispatch();
   const st = useSelector((state) => state.user);
-  console.log("UUU : ", st);
+
 
   const [showPassword, setShowPassword] = useState(false);
   const [data, setData] = useState({
@@ -72,7 +72,7 @@ const Login = () => {
     }
   };
 
-  console.log("This is  data section", data);
+
 
   return (
     <section id="login">
