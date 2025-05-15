@@ -5,10 +5,12 @@ const SummaryApi = {
   signUP: {
     url: `${backendDomin}/api/signup`,
     method: "post",
+    withCredentials: true
   },
   signIn: {
     url: `${backendDomin}/api/signin`,
     method: "post",
+    withCredentials: true
   },
   current_user: {
     url: `${backendDomin}/api/user-details`,

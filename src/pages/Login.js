@@ -61,6 +61,7 @@ const Login = () => {
       navigate("/");
        
       fetchUserDetails();
+      
       fetchUserAddToCart();
     }
 

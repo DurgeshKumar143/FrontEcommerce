@@ -101,9 +101,9 @@ const Cart = () => {
             }
           },
           prefill: {
-            name: "Javed Shekh",
-            email: "javedshekh777@gmail.com",
-            contact: "6307354106",
+            name: "Durgesh Kumar",
+            email: "dk007874@gmail.com",
+            contact: "6393381887",
           },
           notes: {
             address: "Razorpay Corporate Office",
